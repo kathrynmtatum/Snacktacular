@@ -1,0 +1,42 @@
+//
+//  ViewController.swift
+//  Snacktacular
+//
+//  Created by John Gallaugher on 3/23/18.
+//  Copyright © 2018 John Gallaugher. All rights reserved.
+//
+
+import UIKit
+import CoreLocation
+
+class SpotsListViewController: UIViewController {
+    
+    @IBOutlet weak var tableView: UITableView!
+    var spots: Spots!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        spots = Spots()
+        spots.spotArray.append(Spot(name: "Stephanie's On Newbury", address: "Newbury Street", coordinate: CLLocationCoordinate2D(), averageRating: 0.0, numberOfReviews: 0, postingUserID: "", documentID: ""))
+        spots.spotArray.append(Spot(name: "Amelia's Taqueria", address: "Cleveland Circle", coordinate: CLLocationCoordinate2D(), averageRating: 0.0, numberOfReviews: 0, postingUserID: "", documentID: ""))
+        spots.spotArray.append(Spot(name: "Johnny's Luncheonette", address: "Newton Center", coordinate: CLLocationCoordinate2D(), averageRating: 0.0, numberOfReviews: 0, postingUserID: "", documentID: ""))
+        
+    }
+}
+
+extension SpotsListViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return spots.spotArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! SpotsTableViewCell
+        cell.nameLabel.text = spots.spotArray[indexPath.row].name
+        return cell
+    }
+    
+    
+}
