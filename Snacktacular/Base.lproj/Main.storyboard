@@ -103,10 +103,14 @@
                         </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="1A4-7d-Reh">
-                        <barButtonItem key="leftBarButtonItem" title="Sign Out" id="0Xl-Y6-OJl"/>
+                        <barButtonItem key="leftBarButtonItem" title="Sign Out" id="0Xl-Y6-OJl">
+                            <connections>
+                                <action selector="signOutPressed:" destination="BYZ-38-t0r" id="EZR-Eb-QU9"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="h6L-yW-eBN">
                             <connections>
-                                <segue destination="bJy-tV-PMh" kind="presentation" identifier="AddSpot" id="Pko-9g-ZUS"/>
+                                <segue destination="bJy-tV-PMh" kind="presentation" identifier="AddSpot" modalPresentationStyle="fullScreen" id="Pko-9g-ZUS"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -347,6 +351,9 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="LPv-eM-So5"/>
                         <barButtonItem title="Look Up Place" id="GJD-KN-l7k">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="lookupPlacePressed:" destination="L7d-5i-Cie" id="aV7-ia-pXb"/>
+                            </connections>
                         </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="R1z-zr-Kjm">
